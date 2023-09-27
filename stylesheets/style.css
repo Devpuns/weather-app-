@@ -1,0 +1,59 @@
+#Navbar-container {
+    position: relative;
+    background-color: #F4E1B6;
+    height: 250px; 
+    display: flex;
+    
+}
+
+.navbar-brand {
+  padding-left: 35px; 
+  margin-right: auto; 
+  margin-top: 25px;
+}
+
+.nav-link {
+  margin-top: 20px;
+  color: #234020; 
+  font-size: 16px; 
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: oblique;
+  text-shadow: 2px 2px 4px rgba(4, 30, 14, 0.5);
+}
+
+.navbar-brand img {
+  width: 280px;
+  height: auto;
+  margin-top: 100;
+  margin-left: 30;
+  margin-right: 50px;
+}
+
+.nav {
+    display: flex;
+  }
+
+.nav-item {
+  margin-right: 20px;
+  width: 180px;
+  align-self: center;
+}
+
+.nav-item-n {
+  margin-right: 20px;
+  width: 160px;
+}
+
+.search-placeholder {
+  margin-top: 130px;
+  text-align: center;
+  width: 350px;
+  color: darkgray;
+}
+
+.btn btn-success {
+  width: 50px;
+  height: auto;
+}
+
+
