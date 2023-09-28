@@ -1,3 +1,4 @@
+/* Navbar */
 #Navbar-container {
     position: relative;
     background-color: #F4E1B6;
@@ -45,7 +46,7 @@
 }
 
 .search-placeholder {
-  margin-left: 60px;
+  margin-left: 350px;
   margin-top: 130px;
   text-align: center;
   width: 550px;
@@ -55,13 +56,13 @@
 }
 
 #goToWeather {
-  background-color: #42a023;
+  background-color: #77b961;
   color: black;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #searchLiveWeather {
-  background-color: rgb(79, 165, 8);
+  background-color: 77b961;
   margin-left: 20px;
   color: black;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -107,13 +108,14 @@
   background-color: darkseagreen;
   height: 30px;
 }
-
+/* Titles */
 #title {
+  margin-top: 50px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
   color: #32672c;
 }
-
+/* Connect with Us */
 .row g-3 {
   border: 1px #234020;
   margin: 50px;
@@ -159,7 +161,7 @@
   margin-top: 20px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
+/* Customer Voices */
 .reviews-grid {
   margin-left: 60px;
   margin-right: 60px;
@@ -207,7 +209,7 @@
   font-weight: bold;
   margin-top: 10px;
 }
-
+/* Get in Touch */
 #Pricing {
   background-color: #cdeecd;
   padding: 40px 0;
@@ -215,6 +217,7 @@
 }
 
 .pricing-card {
+  margin-top: 20px;
   background-color: rgb(247, 248, 199);
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -264,5 +267,166 @@
 .pricing-card button:hover {
   background-color: #4a7f4d;
 }
+/* Footer */
+#footer {
+  background-color: #F4E1B6;
+  padding: 20px 0;
+}
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  width: 300px; 
+  height: auto;
+  margin-left: 0;
+  margin-top: 40px;
+}
+
+.footer-social {
+  margin-left: 60px; 
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.footer-text {
+  margin-left: auto;
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.footer-text p {
+  font-size: 18px;
+  color: #287120;
+  width: 800px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  flex-grow: 1; 
+  margin-left: 20px; 
+}
+
+.footer-copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px; 
+}
+
+.footer-copyright p {
+  font-size: 14px;
+  color: #234020;
+}
+
+.footer-caption {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px; 
+}
+
+/* Configure & Customize */
+#Configure-Customize {
+  background-color: #F4E1B6;
+  /* padding: 50px 0; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.setting-box1 {
+  background-color: rgb(78, 150, 107);
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-right: 20px;
+  margin-left: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  flex: 0 0 800px;
+  margin-bottom: 20px;
+}
+
+.setting-box2 {
+  background-color: rgb(78, 150, 107);
+  border: 1px solid #ccc;
+  padding: 20px;
+  height: 180px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  flex: 0 0 400px; 
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 50px;
+  align-items: center;
+}
+
+.setting-box h3 {
+  font-size: 24px;
+  color: #345b2f;
+}
+
+.setting-box p {
+  font-size: 16px;
+  color: #e6e584;
+  margin-top: 10px;
+}
+
+.btn-settings {
+  background-color: #6eab67;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 150px;
+}
+
+.btn-settings:hover {
+  background-color: #a8cd75;
+}
+
+.unit-btn {
+  color: #32672c;
+  background-color: #e6e584;
+  
+}
+#CC-title {
+  color: #F4E1B6;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.list-group {
+  text-align: center; 
+  margin: 0 auto; 
+}
+
+.CC-text {
+  color: #ccc;
+  margin-left: 20px;
+}
+
+.list-group-item {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin-right: 30px;
+}
+
+.btn-group ml-3 {
+  margin-left: 30px;
+}
 
