@@ -141,12 +141,18 @@
 }
 
 .btn-primary-reach {
-  display: block;
-  margin-left:300px ;
-  margin-top: 25px;
-  background-color: olive;
-  font-style: oblique;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #d7d782;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 55px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: initial;
+  font: 1em sans-serif;
 }
 
 .form-label {
@@ -157,9 +163,10 @@
 .reviews-grid {
   margin-left: 60px;
   margin-right: 60px;
+  margin-bottom: 30px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 60px; 
+  gap: 30px; 
 }
 
 .review {
@@ -167,16 +174,17 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 30px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px rgba(21, 121, 39, 0.1);
   display: flex; 
   flex-direction: column; 
   align-items: center;
   text-align: center; 
+  height: 250px;
 }
 
 .review-image {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 10px;
@@ -192,10 +200,69 @@
   font-size: 16px;
   margin: 0;
   padding: 10px;
+  color: #32672c;
 }
 
 .customer-name {
   font-weight: bold;
   margin-top: 10px;
 }
+
+#Pricing {
+  background-color: #cdeecd;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.pricing-card {
+  background-color: rgb(247, 248, 199);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-align: left;
+  max-width: 300px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.pricing-card h3 {
+  font-size: 22px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pricing-card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.pricing-card ul {
+  list-style-type:square;
+  margin-left: 20px;
+}
+
+.pricing-card li {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.pricing-card button {
+  background-color: #6eab67;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 55px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: initial;
+}
+
+.pricing-card button:hover {
+  background-color: #4a7f4d;
+}
+
 
