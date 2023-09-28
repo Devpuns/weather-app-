@@ -11,13 +11,14 @@
 </head>
 
 <body>
+<!-- Navbar -->
     <section id="Navbar-container">
       <div class="container">
         <a class="navbar-brand" href="#">
           <img src="/assets/Logo.png" alt="Logo">
         </a>
       </div>
-
+<!-- Navbar tabs -->
       <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="nav justify-content-between"> 
         <li class="nav-item">
@@ -39,21 +40,104 @@
           <a class="nav-link disabled" aria-disabled="true">Who We Are</a>
         </li>
        </ul>
-     
-
+<!-- Search weather -->
       <div class="search-placeholder">
           <input type="text" class="form-control" placeholder="Search for City">
-          <button>Go</button>
+          <button class="btn btn-primary" id="goToWeather">Go</button>
+          <button type="button" class="btn btn-success" id="searchLiveWeather">
+            <img src="assets/location.png" alt="Icon" width="50px" height="40px">Live Location
+          </button>
+          <button class="btn-login" >Login</button>
+          <button class="btn-sign-up" >Sign-up</button>
+          <button type="dark" class="btn btn-dark-light" id="darkLight">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brilliance" viewBox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16ZM1 8a7 7 0 0 0 7 7 3.5 3.5 0 1 0 0-7 3.5 3.5 0 1 1 0-7 7 7 0 0 0-7 7Z"/>
+            </svg></button>
       </div>
-      <div class="input-group-append">
-        <button type="button" class="btn btn-success" id="searchLiveWeather">
-          <img src="assets/location.png" alt="Icon" width="50px" height="40px"> 
-        </button>
-      </div>
-
-      
-      
     </section>
+<!-- Weather Dashboard -->
+    <section id="Weather-dashboard">
+      <h2 id="title">Weather Dashboard</h1>
+    </section>
+<!-- Configure & Customize -->
+    <section id="Config">
+      <h2 id="title">Configure & Customize</h1>
+    </section>
+<!-- Customer Voices -->
+<section id="Customer-Reviews">
+  <h2 id="title">Customer Reviews</h2>
+  <div class="reviews-grid">
+    <div class="review">
+      <div class="review-image">
+        <img src="assets/1.png" alt="Customer 1">
+      </div>
+      <div class="review-text">
+        <p>"Great weather service! I love how accurate and reliable it is."</p>
+        <p class="customer-name">- John Doe</p>
+      </div>
+    </div>
+    <div class="review">
+      <div class="review-image">
+        <img src="assets/2.png" alt="Customer 2">
+      </div>
+      <div class="review-text">
+        <p>"Forecast Finesse has helped me plan my outdoor activities with confidence."</p>
+        <p class="customer-name">- Sarah Brown</p>
+      </div>
+    </div>
+    <div class="review">
+      <div class="review-image">
+        <img src="assets/3.png" alt="Customer 3">
+      </div>
+      <div class="review-text">
+        <p>"I rely on this weather service for my daily commute. It's never let me down."</p>
+        <p class="customer-name">- David Johnson</p>
+      </div>
+    </div>
+    <div class="review">
+      <div class="review-image">
+        <img src="assets/4.png" alt="Customer 4">
+      </div>
+      <div class="review-text">
+        <p>"The user-friendly interface and accurate forecasts make it my go-to weather application."</p>
+        <p class="customer-name">- Jane Smith</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+        
+    
+<!-- Get in Touch -->
+    <section id="Get-in-Touch">
+      <h2 id="title">Get in Touch</h1>
+    </section>
+<!-- Connect with Us -->
+<section id="Connect-with-Us">
+  <h2 id="title">Connect with Us</h2>
+
+  <div class="form-box">
+      <form class="row g-3">
+        <div><p id="form-para">Have a question or feedback for us? We'd love to hear from you! Reach out to our weather experts and support team through the contact form below. We're here to help you stay ahead of the elements.</p></div>
+          <div class="col-md-12">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4">
+          </div>
+          <div class="col-md-12">
+              <label for="inputCity" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="col-md-12">
+              <label for="inputZip" class="form-label">Your Message</label>
+              <textarea class="form-control" id="inputZip"></textarea>
+          </div>
+          <div class="col-12">
+              <button type="submit" class="btn btn-primary-reach">Reach Out</button>
+          </div>
+      </form>
+  </div>
+</section>
+
   
   <script src="scripts/script.js"></script>
   <script src=”https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js” integrity=”sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ” crossorigin=”anonymous”></script>
