@@ -43,12 +43,10 @@
 <!-- Search weather -->
       <div class="search-placeholder">
         <input type="text" class="form-control" placeholder="Search for City">
-          <button class="btn btn-primary" id="goToWeather">Go</button>
+          <button onclick="goBtnOnClicked()" class="btn btn-primary" id="goToWeather">Go</button>
           <button type="button" class="btn btn-success" id="searchLiveWeather">
             <img src="assets/location.png" alt="Icon" width="50px" height="40px">Live Location
           </button>
-          <!-- <button class="btn-login" >Login</button>
-          <button class="btn-sign-up" >Sign-up</button> -->
           <button type="dark" class="btn btn-dark-light" id="darkLight">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brilliance" viewBox="0 0 16 16">
               <path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16ZM1 8a7 7 0 0 0 7 7 3.5 3.5 0 1 0 0-7 3.5 3.5 0 1 1 0-7 7 7 0 0 0-7 7Z"/>
@@ -60,6 +58,7 @@
 <!-- Weather Dashboard -->
     <section id="Weather-dashboard">
       <h2 id="title">Weather Dashboard</h1>
+        <h3 id="cityName"></h3>
     </section>
 
 <!-- Configure & Customize -->
@@ -207,6 +206,7 @@
     </footer>
 
   <script src="scripts/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src=”https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js” integrity=”sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ” crossorigin=”anonymous”></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>

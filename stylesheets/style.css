@@ -115,6 +115,16 @@
   text-align: center;
   color: #32672c;
 }
+/* Weather Dashboard */
+#cityName {
+  margin-left: 40px;
+  font-size: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+
 /* Connect with Us */
 .row g-3 {
   border: 1px #234020;
