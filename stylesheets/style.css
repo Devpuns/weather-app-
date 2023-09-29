@@ -121,8 +121,71 @@
   font-size: 30px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.weather-container {
+  display: flex;
+}
+
+.weather-info-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.weather-info-container {
+  display: inline-block;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.weather-info {
+  margin: 10px;
+}
 
 
+.map {
+  flex: 1; 
+  height: auto; 
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden; 
+  margin-bottom: 30px;
+  margin-left: 50px;
+  margin-right: 40px;
+}
+
+.weather-grid {
+  flex: 1; 
+  margin-left: 20px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.weather {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(21, 121, 39, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 80px;
+}
+
+.weather h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.weather p {
+  font-size: 16px;
+  margin: 0;
+}
 
 
 /* Connect with Us */
