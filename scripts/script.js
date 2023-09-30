@@ -1,4 +1,3 @@
-
 // Updating weather dashboard dynamically
 const apiUrl = "http://api.weatherapi.com/v1/current.json?key=b72ae7c19f3e4bf8b2163755232909&q=";
 
@@ -29,25 +28,43 @@ async function checkWeather(city){
 
 function setWeatherIcon(conditionText) {
   const weatherIcon = document.querySelector(".weather-icon");
+
+  console.log("Condition Text from API:", conditionText);
   
   switch (conditionText.toLowerCase()) {
     case "cloudy":
-      weatherIcon.src = "assets/clouds.png"; break;
+    case "partly cloudy":
+      console.log("Setting Cloudy Icon");
+      weatherIcon.src = "assets/cloudy.png"; break;
     case "clear":
+      console.log("Setting Clear Icon");
       weatherIcon.src = "assets/clear.png"; break;
     case "rain":
+    case "patchy rain shower":
+    case "light rain shower":
+      console.log("Setting Rain Icon");
       weatherIcon.src = "assets/rain.png"; break;
     case "drizzle":
+    case "patchy rain possible":
+      console.log("Setting Drizzle Icon");
       weatherIcon.src = "assets/drizzle.png"; break;
     case "mist":
+      console.log("Setting Mist Icon");
       weatherIcon.src = "assets/mist.png"; break;
     case "humidity":
+      console.log("Setting Humidity Icon");
       weatherIcon.src = "assets/humidity.png"; break;
     case "snow":
+      console.log("Setting Snow Icon");
       weatherIcon.src = "assets/snow.png"; break;
+    case "sunny":
+        console.log("Setting Sunny Icon");
+        weatherIcon.src = "assets/sunny.png"; break;
     case "wind":
+      console.log("Setting Wind Icon");
       weatherIcon.src = "assets/wind.png"; break;
     default:
+      console.log("Setting Default Icon");
       weatherIcon.src = "assets/default-weather-icon.png"; break;
   }
 }
@@ -57,7 +74,90 @@ searchBtn.addEventListener("click", () => {
 
 
 
-// Getting the map
+
+  // Live location weather--------------------------------------------------------------------------------------------------
+function getLiveWeather() {
+  // Check if geolocation is supported by the browser
+  if ('geolocation' in navigator) {
+    // Get the user's current position
+    navigator.geolocation.getCurrentPosition(async (position) => {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      const location = `${latitude},${longitude}`;
+
+      try {
+        // Fetch weather data using the API URL
+        const response = await fetch(apiUrl + location);
+        const data = await response.json();
+
+        // Display weather data on the webpage
+        displayWeatherData(data);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
+    }, (error) => {
+      console.error("Error getting user's location:", error);
+    });
+  } else {
+    alert("Geolocation is not supported by your browser.");
+  }
+}
+
+const searchLiveWeatherButton = document.getElementById("searchLiveWeather");
+searchLiveWeatherButton.addEventListener("click", getLiveWeather);
+
+function displayWeatherData(data) {
+  document.querySelector("#city").innerHTML = data.location.name;
+  document.querySelector(".feelslike").innerHTML = Math.round(data.current.feelslike_c) + "°C";
+  document.querySelector(".temp").innerHTML = Math.round(data.current.temp_c) + "°C";
+  document.querySelector(".localTime").innerHTML = data.location.localtime;
+  document.querySelector(".condition").innerHTML = data.current.condition.text;
+  document.querySelector(".wind").innerHTML = data.current.wind_mph + " mph";
+  document.querySelector(".humidity").innerHTML = data.current.humidity + "%";
+  document.querySelector(".uv").innerHTML = data.current.uv;
+  document.querySelector(".cloud").innerHTML = data.current.cloud;
+  document.querySelector(".pressure").innerHTML = data.current.pressure_in + " in";
+
+  // Set the weather icon based on the weather condition
+  setWeatherIcon(data.current.condition.text);
+}
+
+// Function to set the weather icon
+function setWeatherIcon(conditionText) {
+  const weatherIcon = document.querySelector(".weather-icon");
+
+  switch (conditionText.toLowerCase()) {
+    case "cloudy":
+    case "partly cloudy":
+      weatherIcon.src = "assets/cloudy.png"; break;
+    case "clear":
+      weatherIcon.src = "assets/clear.png"; break;
+    case "rain":
+    case "patchy rain shower":
+    case "light rain shower":
+      weatherIcon.src = "assets/rain.png"; break;
+    case "drizzle":
+    case "patchy rain possible":
+      weatherIcon.src = "assets/drizzle.png"; break;
+    case "mist":
+      weatherIcon.src = "assets/mist.png"; break;
+    case "humidity":
+      weatherIcon.src = "assets/humidity.png"; break;
+    case "snow":
+      weatherIcon.src = "assets/snow.png"; break;
+    case "sunny":
+      weatherIcon.src = "assets/sunny.png"; break;
+    case "wind":
+      weatherIcon.src = "assets/wind.png"; break;
+    default:
+      weatherIcon.src = "assets/default-weather-icon.png"; break;
+  }
+}
+
+
+
+
+// Getting the map---------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
   // Get a reference to the map container
   var mapContainer = document.getElementById('map');
@@ -97,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Get Forecasting details for 8 days
+// Get Forecasting details for 8 days----------------------------------------------------------------------------------------------
 const apiKey = "b72ae7c19f3e4bf8b2163755232909";
 const forecastUrl = "http://api.weatherapi.com/v1/forecast.json";
 // get data from API
@@ -118,7 +218,7 @@ async function getWeatherForecast(city) {
         console.error("Error fetching weather data:", error);
     }
 }
-// update and displaying data
+// update and displaying data--------------------------------------------------------------
 function displayWeatherForecast(data) {
     const forecastChart = document.querySelector(".forecast-chart");
     forecastChart.innerHTML = ""; 
@@ -148,127 +248,7 @@ function displayWeatherForecast(data) {
 }
 
 
-
-// let map;
-// let marker;
-
-// const successCallback = (position) => {
-//   const { latitude, longitude } = position.coords;
-//   setLocationInMap(latitude, longitude);
-//   getWeatherData(latitude, longitude);
-// };
-
-// const errorCallback = (error) => {
-//   console.log(error);
-// };
-
-// function initMap() {
-//   map = L.map('map').setView([0, 0], 13);
-
-//   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     maxZoom: 19,
-//     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-//   }).addTo(map);
-
-//   marker = L.marker([0, 0]).addTo(map);
-//   getLocation();
-// }
-
-// function getLocation() {
-//   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-// }
-
-// function goBtnOnClick() {
-//   getLocation();
-// }
-
-// function getWeatherData(latitude, longitude) {
-//   $.ajax({
-//     method: 'GET',
-//     url: `http://api.weatherapi.com/v1/current.json?key=b72ae7c19f3e4bf8b2163755232909&q=${latitude},${longitude}`,
-//     success: (resp) => {
-//       const locationName = resp.location.name;
-//       const temperature = resp.current.temp_c;
-//       const weatherDescription = resp.current.condition.text;
-
-//       updateWeatherUI(locationName, temperature, weatherDescription);
-//     },
-//     error: (error) => {
-//       console.error(error);
-//     }
-//   });
-// }
-
-// function updateWeatherUI(locationName, temperature, weatherDescription) {
-//   document.getElementById('locationName').textContent = locationName;
-//   document.getElementById('temperature').textContent = `${temperature}°C`;
-//   document.getElementById('weatherDescription').textContent = weatherDescription;
-// }
-
-// function setLocationInMap(lat, lon) {
-//   marker.setLatLng([lat, lon]).update();
-//   map.setView([lat, lon], 13);
-// }
-
-// function goBtnOnClick() {
-//   getLocation();
-// }
-
-
-
-
-// let locationName = "";
-
-
-// const successCallBack = (position) => {
-//     console.log(position);
-//     setLocationInMap(position.coords.latitude, position.coords.longitude)
-// }
-
-// const errorCallBack = (error) => {
-//     console.log(error);
-// }
-
-// getLocation();
-
-// function getLocation(){
-//     navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack);
-// }
-
-
-// function goBtnOnClick() {
-//     $.ajax({
-//         method: "GET",
-//         url: "http://api.weatherapi.com/v1/current.json?Key=b72ae7c19f3e4bf8b2163755232909&q=Matugama ",
-//         success: (resp) => {
-//             console.log("Latitude : ",resp.location.lat);
-//             console.log("Longitude : ",resp.location.lon);
-//             setLocationInMap(resp.location.lat, resp.location.lon);
-//         }
-//     });
-// }
-
-// var map = L.map('map').setView([51.505, -0.09], 13);
-
-// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     maxZoom: 19,
-//     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-// }).addTo(map);
-
-// var lng = 8.297414;
-// var ltd = 80.414101;
-
-// const marker = L.marker([0,0]).addTo(map);
-
-// function setLocationInMap(lng,ltd){
-       
-//         marker.setLatLng([lng, ltd]).update();
-//         map.setView([lng, ltd],13); 
-// }
-
-
-
-// Selecting theme of the website (dark/ light)
+// Selecting theme of the website (dark/ light)-------------------------------------------------------------------------
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
@@ -289,6 +269,3 @@ if (localStorage.getItem('theme') === 'dark') {
 }
 
 
-
-
-  

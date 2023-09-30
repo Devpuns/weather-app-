@@ -74,43 +74,6 @@
   width: 400px; 
 }
 
-/* .btn-login {
-  margin-left: 200px;
-  padding: 8px;
-  font-size: 19px;
-  font-family:serif;
-  color: rgb(36, 103, 18);
-  font-style: oblique;
-} */
-
-/* .error {
-  text-align: left;
-  margin-left: 10px;
-  font-size: 14px;
-  margin-top: 10px;
-  display: none;
-} */
-
-/* .btn-login:hover {
-  background-color: darkkhaki;
-  border: #42a023;
-}
-
-.btn-sign-up {
-  white-space: nowrap; 
-  margin-left: 20px;
-  padding: 8px;
-  font-size: 19px;
-  font-family:serif;
-  color: rgb(36, 103, 18);
-  font-style: oblique;
-} */
-
-/* .btn-sign-up:hover {
-  background-color: darkkhaki;
-  border: #42a023;
-} */
-
 .btn-dark-light {
   margin-left: 220px;
   background-color: darkseagreen;
@@ -155,7 +118,6 @@ body.dark-mode {
 .weather-container {
   display: flex;
   align-self: center;
-  
 }
 
 .weather-info-box {
@@ -180,14 +142,16 @@ body.dark-mode {
 
 .weather-info {
   display: flex;
-  flex-direction: column; 
-  margin-right: 20px;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 10px;
   margin-bottom: 10px;
   flex: 1;
 }
 
 .weather-status {
   margin-right: 20px;
+  margin-left: 20px;
 }
 
 .weather-icon {
@@ -205,6 +169,7 @@ body.dark-mode {
 .col img {
   width: 40px;
   margin-right: 10px;
+  margin-left: 10px;
 }
 
 .humidity, .wind, .temp, .pressure, .uv, .feelslike {
@@ -648,6 +613,7 @@ h2 {
 .list-group-item {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   margin-right: 30px;
+  color: #0f5d2b;
 }
 
 .btn-group ml-3 {
