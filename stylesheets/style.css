@@ -74,14 +74,14 @@
   width: 400px; 
 }
 
-.btn-login {
+/* .btn-login {
   margin-left: 200px;
   padding: 8px;
   font-size: 19px;
   font-family:serif;
   color: rgb(36, 103, 18);
   font-style: oblique;
-}
+} */
 
 /* .error {
   text-align: left;
@@ -149,7 +149,7 @@ body.dark-mode {
 #city {
   text-align: center;
   font-size: 30px;
-  color: #4e520e;
+  color: #146324;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .weather-container {
@@ -171,9 +171,10 @@ body.dark-mode {
   background-color: #89d182;
   padding: 10px;
   border-radius: 5px;
-  /* width: 600px; */
+  /* width: 100%; */
   align-items: center;
-  color: #333333;
+  color: #3d612f;
+  font-style: oblique;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -219,6 +220,80 @@ body.dark-mode {
 .info-point h4 {
   margin-right: 10px;
 }
+
+/* Style the Weather Forecast section */
+#Weather-forecast {
+  margin-top: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Style the Get Forecast button */
+#getForecastButton {
+  background-color: #77b961;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  height: 45px;
+}
+
+#getForecastButton:hover {
+  background-color: #b6e37f;
+}
+
+/* Style the forecast container */
+.forecast-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+/* Style the forecast chart */
+.forecast-chart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto;
+}
+
+/* Style each day's column in the chart */
+.forecast-column {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #0e9419;
+  border-radius: 5px;
+  background-color: #f7f8c7;
+}
+
+/* Style the heading within each day */
+.forecast-column h3{
+  font-size: 15px;
+  color: #1b905f;
+}
+.forecast-column p {
+  font-size: 14px;
+  color: #234020;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Center-align the text */
+.forecast-column p {
+  text-align: center;
+  color: brown;
+}
+
 
 #map {
   flex: 1; 

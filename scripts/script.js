@@ -1,5 +1,5 @@
 
-
+// Updating weather dashboard dynamically
 const apiUrl = "http://api.weatherapi.com/v1/current.json?key=b72ae7c19f3e4bf8b2163755232909&q=";
 
 const searchBox = document.querySelector(".search input");
@@ -25,7 +25,6 @@ async function checkWeather(city){
 
   // Set the weather icon based on the weather condition
   setWeatherIcon(data.current.condition.text);
-  
 }
 
 function setWeatherIcon(conditionText) {
@@ -33,45 +32,35 @@ function setWeatherIcon(conditionText) {
   
   switch (conditionText.toLowerCase()) {
     case "cloudy":
-      weatherIcon.src = "assets/clouds.png";
-      break;
+      weatherIcon.src = "assets/clouds.png"; break;
     case "clear":
-      weatherIcon.src = "assets/clear.png";
-      break;
+      weatherIcon.src = "assets/clear.png"; break;
     case "rain":
-      weatherIcon.src = "assets/rain.png";
-      break;
+      weatherIcon.src = "assets/rain.png"; break;
     case "drizzle":
-      weatherIcon.src = "assets/drizzle.png";
-      break;
+      weatherIcon.src = "assets/drizzle.png"; break;
     case "mist":
-      weatherIcon.src = "assets/mist.png";
-      break;
+      weatherIcon.src = "assets/mist.png"; break;
     case "humidity":
-      weatherIcon.src = "assets/humidity.png";
-      break;
+      weatherIcon.src = "assets/humidity.png"; break;
     case "snow":
-      weatherIcon.src = "assets/snow.png";
-      break;
+      weatherIcon.src = "assets/snow.png"; break;
     case "wind":
-      weatherIcon.src = "assets/wind.png";
-      break;
+      weatherIcon.src = "assets/wind.png"; break;
     default:
-      weatherIcon.src = "assets/default-weather-icon.png";
-      break;
+      weatherIcon.src = "assets/default-weather-icon.png"; break;
   }
 }
-
 searchBtn.addEventListener("click", () => {
     checkWeather(searchBox.value); 
   });
+
 
 
 // Getting the map
 document.addEventListener("DOMContentLoaded", function () {
   // Get a reference to the map container
   var mapContainer = document.getElementById('map');
-
   var map = L.map(mapContainer);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -79,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
 
-  // Function to update the map based on a location
   function updateMap(city) {
       var geocodeUrl = 'pk.ae6f05bec51c05facedfbacffab8cbd4' + city;
 
@@ -89,18 +77,16 @@ document.addEventListener("DOMContentLoaded", function () {
               return response.json();
           })
           .then(function (data) {
-              // Extract the latitude and longitude from the geocoding response
+              
               var latitude = data.features[0].center[1];
               var longitude = data.features[0].center[0];
 
-              // Set the map's view to the new coordinates
               map.setView([latitude, longitude], 13);
           })
           .catch(function (error) {
               console.error('Error geocoding location:', error);
           });
   }
-
   // Event listener for the "Go" button to update the map
   var goButton = document.getElementById('goToWeather');
   goButton.addEventListener('click', function () {
@@ -111,9 +97,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// Get Forecasting details for 8 days
+const apiKey = "b72ae7c19f3e4bf8b2163755232909";
+const forecastUrl = "http://api.weatherapi.com/v1/forecast.json";
+// get data from API
+document.getElementById("getForecastButton").addEventListener("click", () => {
+    const city = document.getElementById("cityInput").value;
+    getWeatherForecast(city);
+});
 
+async function getWeatherForecast(city) {
+    const url = `${forecastUrl}?key=${apiKey}&q=${city}&days=8`;
+    console.log("Fetching forecast data for city:", city);
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log("Forecast data:", data); 
+        displayWeatherForecast(data);
+    } catch (error) {
+        console.error("Error fetching weather data:", error);
+    }
+}
+// update and displaying data
+function displayWeatherForecast(data) {
+    const forecastChart = document.querySelector(".forecast-chart");
+    forecastChart.innerHTML = ""; 
 
+    if (data.forecast && data.forecast.forecastday.length > 0) {
+        const forecastDays = data.forecast.forecastday;
 
+        forecastDays.forEach(day => {
+            const date = day.date;
+            const condition = day.day.condition.text;
+            const maxTemp = day.day.maxtemp_c;
+            const minTemp = day.day.mintemp_c;
+
+            const forecastColumn = document.createElement("div");
+            forecastColumn.classList.add("forecast-column");
+            forecastColumn.innerHTML = `
+                <h3>${date}</h3>
+                <p>Condition: ${condition}</p>
+                <p>Max Temperature: ${maxTemp}°C</p>
+                <p>Min Temperature: ${minTemp}°C</p>
+            `;
+            forecastChart.appendChild(forecastColumn);
+        });
+    } else {
+        forecastChart.textContent = "No forecast data available for this location.";
+    }
+}
 
 
 
@@ -236,9 +268,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
 // Selecting theme of the website (dark/ light)
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
@@ -254,9 +283,7 @@ function toggleDarkMode() {
     localStorage.setItem('theme', 'dark');
   }
 }
-// Add an event listener to toggle dark mode when the button is clicked
 themeToggle.addEventListener('click', toggleDarkMode);
-// Check user's preference from previous visits (optional)
 if (localStorage.getItem('theme') === 'dark') {
   body.classList.add('dark-mode');
 }
