@@ -1,4 +1,4 @@
-/* Navbar */
+/* -----------------Navbar------------------------------- */
 #Navbar-container {
     position: relative;
     background-color: #F4E1B6;
@@ -6,13 +6,13 @@
     display: flex;
     width: auto ;
 }
-
+/* logo within the navigation bar */
 .navbar-brand {
   padding-left: 35px; 
   margin-right: auto; 
   margin-top: 25px;
 }
-
+/* navigation links */
 .nav-link {
   margin-top: 20px;
   color: #234020; 
@@ -21,7 +21,7 @@
   font-style: oblique;
   text-shadow: 2px 2px 4px rgba(4, 30, 14, 0.5);
 }
-
+/* logo image */
 .navbar-brand img {
   width: 280px;
   height: auto;
@@ -29,11 +29,11 @@
   margin-left: 30;
   margin-right: 50px;
 }
-
+/* navigation list */
 .nav {
     display: flex;
   }
-
+/* individual navigation items */
 .nav-item {
   margin-right: 20px;
   width: 180px;
@@ -44,7 +44,7 @@
   margin-right: 20px;
   width: 160px;
 }
-
+/* search bar and buttons */
 .search {
   margin-left: 350px;
   margin-top: 130px;
@@ -54,13 +54,13 @@
   align-items: center;
   position: absolute;
 }
-
+/* "Go" button */
 #goToWeather {
   background-color: #77b961;
   color: black;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-
+/* "Live Location" button */
 #searchLiveWeather {
   background-color: #77b961;
   margin-left: 20px;
@@ -69,37 +69,33 @@
   height: auto;
   width: 170px;
 }
-
+/* input field in the search bar */
 .search input[type="text"] {
   width: 400px; 
 }
-
+/* dark/light mode toggle button */
 .btn-dark-light {
   margin-left: 220px;
   background-color: darkseagreen;
   height: 30px;
 }
-
-/* Common styles (variables) */
+/* Variables for common colors and styles */
 :root {
   --background-color-light: #ffffff; 
   --text-color-light: #333333; 
   --background-color-dark: #0d0d0d; 
   --text-color-dark: #ffffff;
 }
-
 /* Light mode styles */
 body.light-mode {
   background-color: var(--background-color-light);
   color: var(--text-color-light);
 }
-
 /* Dark mode styles */
 body.dark-mode {
   background-color: var(--background-color-dark);
   color: var(--text-color-dark);
 }
-
 
 /* Titles */
 #title {
@@ -108,7 +104,7 @@ body.dark-mode {
   text-align: center;
   color: #3c7236;
 }
-/* Weather Dashboard */
+/* ------------------Weather Dashboard--------------------- */
 #city {
   text-align: center;
   font-size: 30px;
@@ -133,7 +129,6 @@ body.dark-mode {
   background-color: #89d182;
   padding: 10px;
   border-radius: 5px;
-  /* width: 100%; */
   align-items: center;
   color: #3d612f;
   font-style: oblique;
@@ -186,7 +181,7 @@ body.dark-mode {
   margin-right: 10px;
 }
 
-/* Style the Weather Forecast section */
+/* Weather Forecast section */
 #Weather-forecast {
   margin-top: 30px;
   text-align: center;
@@ -197,7 +192,7 @@ h2 {
   color: #333;
 }
 
-/* Style the Get Forecast button */
+/* Get Forecast button */
 #getForecastButton {
   background-color: #77b961;
   color: #000;
@@ -214,7 +209,7 @@ h2 {
   background-color: #b6e37f;
 }
 
-/* Style the forecast container */
+/* forecast container */
 .forecast-container {
   margin-top: 20px;
   display: flex;
@@ -222,7 +217,7 @@ h2 {
   
 }
 
-/* Style the forecast chart */
+/* forecast chart */
 .forecast-chart {
   display: flex;
   flex-direction: row;
@@ -232,7 +227,6 @@ h2 {
   margin: 20px auto;
 }
 
-/* Style each day's column in the chart */
 .forecast-column {
   flex: 1;
   text-align: center;
@@ -241,8 +235,6 @@ h2 {
   border-radius: 5px;
   background-color: #f7f8c7;
 }
-
-/* Style the heading within each day */
 .forecast-column h3{
   font-size: 15px;
   color: #1b905f;
@@ -253,12 +245,10 @@ h2 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-/* Center-align the text */
 .forecast-column p {
   text-align: center;
   color: brown;
 }
-
 
 #map {
   flex: 1; 
@@ -306,225 +296,7 @@ h2 {
   margin: 0;
 }
 
-/* Connect with Us */
-.row g-3 {
-  border: 1px #234020;
-  margin: 50px;
-}
-
-#form-para {
-  font-size: 15px;
-  color: darkgreen;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.form-control {
-  width: 100%;
-}
-
-.form-box {
-  background-color: #9abb85;
-  padding: 30px;
-  border: 1px solid #7fa09e;
-  border-radius: 5px;
-  margin: 20px auto;
-  max-width: 500px; 
-  height: auto;
-  text-align: center; 
-}
-
-.btn-primary-reach {
-  background-color: #d7d782;
-  color: rgb(0, 0, 0);
-  border: none;
-  padding: 10px 20px;
-  font-size: 18px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-  margin-left: 55px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-style: initial;
-  font: 1em sans-serif;
-}
-
-.form-label {
-  margin-top: 20px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-/* Customer Voices */
-.reviews-grid {
-  margin-left: 60px;
-  margin-right: 60px;
-  margin-bottom: 30px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px; 
-}
-
-.review {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 30px;
-  box-shadow: 0px 0px 10px rgba(21, 121, 39, 0.1);
-  display: flex; 
-  flex-direction: column; 
-  align-items: center;
-  text-align: center; 
-  height: 250px;
-}
-
-.review-image {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-
-.review-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.review-text p {
-  font-size: 16px;
-  margin: 0;
-  padding: 10px;
-  color: #32672c;
-}
-
-.customer-name {
-  font-weight: bold;
-  margin-top: 10px;
-}
-/* Get in Touch */
-#Pricing {
-  padding: 40px 0;
-  text-align: center;
-  color: #136c25;
-}
-
-.pricing-card {
-  margin-top: 20px;
-  background-color: rgb(247, 248, 199);
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  text-align: left;
-  max-width: 300px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.pricing-card h3 {
-  font-size: 22px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.pricing-card p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.pricing-card ul {
-  list-style-type:square;
-  margin-left: 20px;
-}
-
-.pricing-card li {
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-.pricing-card button {
-  background-color: #6eab67;
-  color: rgb(0, 0, 0);
-  border: none;
-  padding: 10px 20px;
-  font-size: 18px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-  margin-left: 55px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-style: initial;
-}
-
-.pricing-card button:hover {
-  background-color: #4a7f4d;
-}
-/* Footer */
-#footer {
-  background-color: #F4E1B6;
-  padding: 20px 0;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.footer-content {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer-logo img {
-  width: 300px; 
-  height: auto;
-  margin-left: 0;
-  margin-top: 40px;
-}
-
-.footer-social {
-  margin-left: 60px; 
-}
-
-.social-icon {
-  width: 30px;
-  height: 30px;
-  margin-right: 20px;
-}
-
-.footer-text {
-  margin-left: auto;
-  flex-grow: 1;
-  margin-left: 20px;
-}
-
-.footer-text p {
-  font-size: 18px;
-  color: #287120;
-  width: 800px;
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  flex-grow: 1; 
-  margin-left: 20px; 
-}
-
-.footer-copyright {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px; 
-}
-
-.footer-copyright p {
-  font-size: 14px;
-  color: #234020;
-}
-
-.footer-caption {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  color: #234020; 
-}
-
-/* Configure & Customize */
+/* -------------------------Configure & Customize-------------------------- */
 #Configure-Customize {
   display: flex;
   flex-wrap: wrap;
@@ -619,4 +391,228 @@ h2 {
 .btn-group ml-3 {
   margin-left: 30px;
 }
+
+
+/* ----------------------Customer Voices------------------ */
+.reviews-grid {
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px; 
+}
+
+.review {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0px 0px 10px rgba(21, 121, 39, 0.1);
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  text-align: center; 
+  height: 250px;
+}
+
+.review-image {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.review-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.review-text p {
+  font-size: 16px;
+  margin: 0;
+  padding: 10px;
+  color: #32672c;
+}
+
+.customer-name {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ------------------------------Get in Touch-------------------------- */
+#Pricing {
+  padding: 40px 0;
+  text-align: center;
+  color: #136c25;
+}
+
+.pricing-card {
+  margin-top: 20px;
+  background-color: rgb(247, 248, 199);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-align: left;
+  max-width: 300px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.pricing-card h3 {
+  font-size: 22px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pricing-card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.pricing-card ul {
+  list-style-type:square;
+  margin-left: 20px;
+}
+
+.pricing-card li {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.pricing-card button {
+  background-color: #6eab67;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 55px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: initial;
+}
+
+.pricing-card button:hover {
+  background-color: #4a7f4d;
+}
+
+/* ----------------------Connect with Us------------------------------------ */
+.row g-3 {
+  border: 1px #234020;
+  margin: 50px;
+}
+
+#form-para {
+  font-size: 15px;
+  color: darkgreen;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.form-box {
+  background-color: #9abb85;
+  padding: 30px;
+  border: 1px solid #7fa09e;
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 500px; 
+  height: auto;
+  text-align: center; 
+}
+
+.btn-primary-reach {
+  background-color: #d7d782;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 55px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: initial;
+  font: 1em sans-serif;
+}
+
+.form-label {
+  margin-top: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+/* -----------------------Footer-------------------------- */
+#footer {
+  background-color: #F4E1B6;
+  padding: 20px 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  width: 300px; 
+  height: auto;
+  margin-left: 0;
+  margin-top: 40px;
+}
+
+.footer-social {
+  margin-left: 60px; 
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.footer-text {
+  margin-left: auto;
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.footer-text p {
+  font-size: 18px;
+  color: #287120;
+  width: 800px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  flex-grow: 1; 
+  margin-left: 20px; 
+}
+
+.footer-copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px; 
+}
+
+.footer-copyright p {
+  font-size: 14px;
+  color: #234020;
+}
+
+.footer-caption {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  color: #234020; 
+}
+
 

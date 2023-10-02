@@ -1,11 +1,12 @@
 // Updating weather dashboard dynamically
 const apiUrl = "http://api.weatherapi.com/v1/current.json?key=b72ae7c19f3e4bf8b2163755232909&q=";
-
+// Selecting DOM elements
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
-
+// Fetch and display weather data based on user input
 async function checkWeather(city){
+// Fetch weather data using the API URL
   const response = await fetch(apiUrl + city);
   var data = await response.json();
 
@@ -25,7 +26,7 @@ async function checkWeather(city){
   // Set the weather icon based on the weather condition
   setWeatherIcon(data.current.condition.text);
 }
-
+// Function to set the weather icon based on the condition text
 function setWeatherIcon(conditionText) {
   const weatherIcon = document.querySelector(".weather-icon");
 
@@ -68,6 +69,7 @@ function setWeatherIcon(conditionText) {
       weatherIcon.src = "assets/default-weather-icon.png"; break;
   }
 }
+// Event listener for the search button
 searchBtn.addEventListener("click", () => {
     checkWeather(searchBox.value); 
   });
@@ -75,9 +77,9 @@ searchBtn.addEventListener("click", () => {
 
 
 
-  // Live location weather--------------------------------------------------------------------------------------------------
+// Live location weather--------------------------------------------------------------------------------------------------
 function getLiveWeather() {
-  // Check if geolocation is supported by the browser
+  
   if ('geolocation' in navigator) {
     // Get the user's current position
     navigator.geolocation.getCurrentPosition(async (position) => {
@@ -154,9 +156,6 @@ function setWeatherIcon(conditionText) {
   }
 }
 
-
-
-
 // Getting the map---------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
   // Get a reference to the map container
@@ -171,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateMap(city) {
       var geocodeUrl = 'pk.ae6f05bec51c05facedfbacffab8cbd4' + city;
 
-      // Fetch the coordinates for the entered location
+// Fetch the coordinates for the entered location
       fetch(geocodeUrl)
           .then(function (response) {
               return response.json();
@@ -200,12 +199,12 @@ document.addEventListener("DOMContentLoaded", function () {
 // Get Forecasting details for 8 days----------------------------------------------------------------------------------------------
 const apiKey = "b72ae7c19f3e4bf8b2163755232909";
 const forecastUrl = "http://api.weatherapi.com/v1/forecast.json";
-// get data from API
+// Event listener for the "Get Forecast" button
 document.getElementById("getForecastButton").addEventListener("click", () => {
     const city = document.getElementById("cityInput").value;
     getWeatherForecast(city);
 });
-
+// Function to fetch and display weather forecast data
 async function getWeatherForecast(city) {
     const url = `${forecastUrl}?key=${apiKey}&q=${city}&days=8`;
     console.log("Fetching forecast data for city:", city);
@@ -218,7 +217,7 @@ async function getWeatherForecast(city) {
         console.error("Error fetching weather data:", error);
     }
 }
-// update and displaying data--------------------------------------------------------------
+// Function to display weather forecast data
 function displayWeatherForecast(data) {
     const forecastChart = document.querySelector(".forecast-chart");
     forecastChart.innerHTML = ""; 
